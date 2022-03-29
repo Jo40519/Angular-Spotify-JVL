@@ -10,4 +10,15 @@ html, body {
 * {
   font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
+  color: #FFFFFF;
+}
+
+
+.flex {
+  display: flex;
+
+  &-center{
+    justify-content: center;
+    align-items: center;
+  }
 }
