@@ -9,7 +9,7 @@ export class SpotifyService {
 
 
   spotifyApi: Spotify.SpotifyWebApiJs = null;
-
+  usuario: any;
 
   constructor() {
     this.spotifyApi = new Spotify();
@@ -34,5 +34,12 @@ export class SpotifyService {
     console.log(params)
 
     return params[0].split('=')[1]
+  }
+
+
+  definirAccessToken(token: string) {
+    this.spotifyApi.setAccessToken(token);
+    localStorage.setItem('token', token);
+    this.spotifyApi.skipToNext();
   }
 }
