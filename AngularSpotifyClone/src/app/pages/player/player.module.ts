@@ -1,3 +1,5 @@
+import { BotaoMenuComponent } from './../../components/botaoMenu/botaoMenu.component';
+import { PainelEsquerdoComponent } from './../../components/painelEsquerdo/painelEsquerdo.component';
 import { PlayerRotas } from './player.routes';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -9,6 +11,10 @@ import { PlayerComponent } from './player.component';
     CommonModule,
     RouterModule.forChild(PlayerRotas)
   ],
-  declarations: [PlayerComponent]
+  declarations: [
+    PlayerComponent,
+    PainelEsquerdoComponent,
+    BotaoMenuComponent
+    ]
 })
 export class PlayerModule { }

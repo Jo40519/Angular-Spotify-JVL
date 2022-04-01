@@ -5,7 +5,7 @@ export const appRotas: Routes = [
 
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'player',
     pathMatch:'full'
   },
 

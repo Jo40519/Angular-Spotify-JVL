@@ -1,0 +1,28 @@
+@import 'variaveis.scss';
+
+$h-spotify-logo: 120px;
+
+:host{
+  max-width: 270px;
+  min-height: 100vh;
+  overflow-y:hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: $cor-fundo2;
+  box-shadow: 1px 1px 15px #00000012;
+  .menus {
+    flex-grow: 1;
+    flex-direction: column;
+    height: 100%;
+    padding: 0px 40px 0px 40px;
+
+    .image-container{
+      min-height: $h-spotify-logo;
+      display: flex;
+      justify-content: start;
+      img {
+        width: 70%;
+      }
+    }
+  }
+}
