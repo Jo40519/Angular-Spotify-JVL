@@ -5,16 +5,19 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PlayerComponent } from './player.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(PlayerRotas)
+    RouterModule.forChild(PlayerRotas),
+     FontAwesomeModule
   ],
   declarations: [
     PlayerComponent,
     PainelEsquerdoComponent,
-    BotaoMenuComponent
+    BotaoMenuComponent,
+
     ]
 })
 export class PlayerModule { }
