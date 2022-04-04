@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { faGuitar, faHome, faMusic, faSearch } from '@fortawesome/free-solid-svg-icons';
-
+import { faGuitar,  faMusic, faSearch, faHome } from '@fortawesome/free-solid-svg-icons';
+import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 @Component({
   selector: 'app-painelEsquerdo',
   templateUrl: './painelEsquerdo.component.html',
@@ -8,6 +9,7 @@ import { faGuitar, faHome, faMusic, faSearch } from '@fortawesome/free-solid-svg
 })
 export class PainelEsquerdoComponent implements OnInit {
 
+  menuSelecionado = 'Home'
 
 
   // Icones
@@ -17,9 +19,14 @@ export class PainelEsquerdoComponent implements OnInit {
   playlistIcon = faMusic
 
 
+
   constructor() { }
 
   ngOnInit() {
   }
 
+
+  botaoClick(botao: string) {
+    this.menuSelecionado = botao
+  }
 }
