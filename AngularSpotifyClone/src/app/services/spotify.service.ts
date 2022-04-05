@@ -71,8 +71,8 @@ export class SpotifyService {
     localStorage.setItem('token', token);
   }
 
-  async buscarPlaylistsUsuario(offset: 0, limit: 50): Promise<IPlaylist[]> {
-    const playlists = await this.spotifyApi.getUserPlaylists(this.usuario.id, {offset, limit});
-    return playlists.items.map(SpotifyPlaylistParaPlaylist)
+  async buscarPlaylistsUsuario(offset = 0, limit = 50): Promise<IPlaylist[]> {
+    const playlists = await this.spotifyApi.getUserPlaylists(this.usuario.id, { offset, limit });
+    return playlists.items.map(SpotifyPlaylistParaPlaylist);
   }
 }
