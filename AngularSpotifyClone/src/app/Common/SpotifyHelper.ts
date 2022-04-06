@@ -12,10 +12,13 @@ export function SpotifyUserParaUsuario(user: SpotifyApi.CurrentUsersProfileRespo
 }
 
 export function SpotifyPlaylistParaPlaylist(playlist: SpotifyApi.PlaylistObjectSimplified): IPlaylist {
+  console.log(playlist)
   return {
     id: playlist.id,
     name: playlist.name,
-    imageUrl: playlist.images.pop().url
-  };
+    // imageUrl: playlist.images.pop().url
 
-  }
+  };
+}
+
+

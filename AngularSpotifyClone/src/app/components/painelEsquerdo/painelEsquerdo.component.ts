@@ -13,7 +13,7 @@ export class PainelEsquerdoComponent implements OnInit {
 
   menuSelecionado = 'Home'
 
-  arrayPlaylist: Array<IPlaylist> = []
+  public arrayPlaylist: IPlaylist[] = []
 
   // Icones
   homeIcon = faHome;
