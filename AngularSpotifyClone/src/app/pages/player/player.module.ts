@@ -1,3 +1,4 @@
+import { FooterUserComponent } from './../../components/footerUser/footerUser.component';
 import { BotaoMenuComponent } from './../../components/botaoMenu/botaoMenu.component';
 import { PainelEsquerdoComponent } from './../../components/painelEsquerdo/painelEsquerdo.component';
 import { PlayerRotas } from './player.routes';
@@ -17,7 +18,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     PlayerComponent,
     PainelEsquerdoComponent,
     BotaoMenuComponent,
-
+    FooterUserComponent
     ]
 })
 export class PlayerModule { }
