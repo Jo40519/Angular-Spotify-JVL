@@ -16,8 +16,7 @@ export function SpotifyPlaylistParaPlaylist(playlist: SpotifyApi.PlaylistObjectS
   return {
     id: playlist.id,
     name: playlist.name,
-    // imageUrl: playlist.images.pop().url
-
+    // imagemUrl: playlist.images.pop().url
   };
 }
 

@@ -1,3 +1,4 @@
+import { HomeComponent } from './../home/home.component';
 import { FooterUserComponent } from './../../components/footerUser/footerUser.component';
 import { BotaoMenuComponent } from './../../components/botaoMenu/botaoMenu.component';
 import { PainelEsquerdoComponent } from './../../components/painelEsquerdo/painelEsquerdo.component';
@@ -18,7 +19,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     PlayerComponent,
     PainelEsquerdoComponent,
     BotaoMenuComponent,
-    FooterUserComponent
+    FooterUserComponent,
+    HomeComponent
     ]
 })
 export class PlayerModule { }

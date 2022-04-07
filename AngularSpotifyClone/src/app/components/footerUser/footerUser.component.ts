@@ -1,4 +1,7 @@
+import { IUsuario } from './../../interfaces/IUsuario';
+import { SpotifyService } from './../../services/spotify.service';
 import { Component, OnInit } from '@angular/core';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-footerUser',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterUserComponent implements OnInit {
 
-  constructor() { }
+
+  public logOutIcon = faSignOutAlt;
+  public usuario: IUsuario
+  constructor(private spotifyService: SpotifyService) { }
 
   ngOnInit() {
+    this.usuario = this.spotifyService.usuario
   }
+
+  logOut() {
+    this.spotifyService.logOut();
+}
 
 }

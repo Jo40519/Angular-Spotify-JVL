@@ -1,5 +1,5 @@
 <div class="flex">
-  <img [src]="" alt="" />
-  <span>João Vitor Lobato</span>
-  <fa-icon [icon]=""></fa-icon>
+  <img [src]="usuario.imagemUrl" alt="" />
+  <span>{{ usuario.nome }}</span>
+  <fa-icon [icon]="logOutIcon" class="icone" (click)="logOut()"></fa-icon>
 </div>

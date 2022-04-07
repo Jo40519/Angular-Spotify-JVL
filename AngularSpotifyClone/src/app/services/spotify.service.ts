@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { async } from '@angular/core/testing';
 import { IUsuario } from './../interfaces/IUsuario';
 import { Injectable } from '@angular/core';
@@ -15,7 +16,7 @@ export class SpotifyService {
   spotifyApi: Spotify.SpotifyWebApiJs = null;
   usuario: IUsuario;
 
-  constructor() {
+  constructor(private router: Router) {
     this.spotifyApi = new Spotify();
  }
 
@@ -74,5 +75,10 @@ export class SpotifyService {
   async buscarPlaylistsUsuario(offset = 0, limit = 50): Promise<IPlaylist[]> {
     const playlists = await this.spotifyApi.getUserPlaylists(this.usuario.id, { offset, limit });
     return playlists.items.map(SpotifyPlaylistParaPlaylist);
+  }
+
+  logOut() {
+    localStorage.clear();
+    this.router.navigate(['/login'])
   }
 }
