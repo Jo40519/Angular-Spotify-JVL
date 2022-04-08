@@ -1,3 +1,4 @@
+import { TopArtistasComponent } from './../../components/top-artistas/top-artistas.component';
 import { HomeComponent } from './../home/home.component';
 import { FooterUserComponent } from './../../components/footerUser/footerUser.component';
 import { BotaoMenuComponent } from './../../components/botaoMenu/botaoMenu.component';
@@ -20,7 +21,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     PainelEsquerdoComponent,
     BotaoMenuComponent,
     FooterUserComponent,
-    HomeComponent
+    HomeComponent,
+    TopArtistasComponent
     ]
 })
 export class PlayerModule { }
