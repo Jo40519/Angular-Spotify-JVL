@@ -1,5 +1,5 @@
-# Angular-Spotify-JVL  <img align="center" alt="jogo-angular" height="40" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/angularjs/angularjs-original.svg">
- <img align="center" alt="jogo-typescript" height="40" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg">
+# Angular-Spotify-JVL  <img align="center" alt="jogo-angular" height="40" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/angularjs/angularjs-original.svg"> <img align="center" alt="jogo-typescript" height="40" width="30" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg">
+ 
  Clone do Aplicativo Spotify em Angular
 
 
