@@ -2,6 +2,29 @@
   <span class="titulo-bg mt-4"> Seu top Artista </span>
 
   <app-top-artistas class="mt-2 d-block"></app-top-artistas>
+
+  <span class="titulo-bg mt-4">Músicas Curtidas</span>
+
+  <table class="talbe mt-3">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Título</th>
+        <th>Artista</th>
+        <th>Tempo</th>
+        <th>Albúm</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let music of musicas">
+        <td>#</td>
+        <td>{{ music.title }}</td>
+        <td>{{ obterArtistas(music) }}</td>
+        <td>{{ music.time }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
-<div class="painel-direito"></div>
+<app-painel-direito class="painel-direito"></app-painel-direito>

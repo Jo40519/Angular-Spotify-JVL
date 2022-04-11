@@ -1,3 +1,5 @@
+import { SpotifyService } from 'src/app/services/spotify.service';
+import { IMusica } from '../../interfaces/IMusica';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+
+  musicas: Array<IMusica> = []
+  constructor(private spotifyService: SpotifyService) { }
 
   ngOnInit() {
+    this.obterMusicas();
   }
 
+  async obterMusicas() {
+      this.musicas = await this.spotifyService.buscarMusicas()
+  }
+
+
+  obterArtistas(musica: IMusica) {
+    return musica.artists.map(artistas => artistas.name).join(', ')
+  }
 }
