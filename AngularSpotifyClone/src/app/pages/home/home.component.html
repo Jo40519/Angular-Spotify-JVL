@@ -5,23 +5,26 @@
 
   <span class="titulo-bg mt-4">Músicas Curtidas</span>
 
-  <table class="talbe mt-3">
+  <table class="table mt-3">
     <thead>
       <tr>
-        <th>#</th>
-        <th>Título</th>
-        <th>Artista</th>
-        <th>Tempo</th>
-        <th>Albúm</th>
+        <th class="w-5">#</th>
+        <th class="w-35">Título</th>
+        <th class="w-30">Artista</th>
+        <th class="w-10 direita">Tempo</th>
+        <th class="w-20">Albúm</th>
       </tr>
     </thead>
 
     <tbody>
-      <tr *ngFor="let music of musicas">
-        <td>#</td>
+      <tr *ngFor="let music of musicas" (click)="executarMusica(music)">
+        <td>
+          <fa-icon [icon]="playIcon" class="play"></fa-icon>
+        </td>
         <td>{{ music.title }}</td>
         <td>{{ obterArtistas(music) }}</td>
-        <td>{{ music.time }}</td>
+        <td class="direita">{{ music.time }}</td>
+        <td>{{ music.album.name }}</td>
       </tr>
     </tbody>
   </table>
