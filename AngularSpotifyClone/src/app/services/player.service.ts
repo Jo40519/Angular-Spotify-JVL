@@ -19,4 +19,9 @@ export class PlayerService {
     const musica = await this.spotifyService.obterMusicaAtual();
     this.musicaAtual.next(musica)
   }
+
+
+  definirMusicaAtual(musica: IMusica) {
+    this.musicaAtual.next(musica)
+  }
 }
