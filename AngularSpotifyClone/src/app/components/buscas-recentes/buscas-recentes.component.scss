@@ -21,6 +21,21 @@
 
   .sugestoes {
     flex-wrap: wrap;
+
+    span {
+      // background-color: #fff;
+      margin-right: 5px;
+      padding: 5px 10px;
+      border: 1px solid;
+      margin-top: 10px;
+      font-size: .9rem;
+      border-radius: 20px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $preto-transparent-20;
+      }
+    }
   }
 
 }

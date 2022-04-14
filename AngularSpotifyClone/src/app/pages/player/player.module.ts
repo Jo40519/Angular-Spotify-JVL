@@ -1,3 +1,5 @@
+import { ArtistasItemImagemComponent } from './../../components/artistas-item-imagem/artistas-item-imagem.component';
+import { TopArtistaComponent } from './../../components/top-artista/top-artista.component';
 import { BuscasRecentesComponent } from './../../components/buscas-recentes/buscas-recentes.component';
 import { PainelDireitoComponent } from './../../components/painel-direito/painel-direito.component';
 import { TopArtistasComponent } from './../../components/top-artistas/top-artistas.component';
@@ -28,7 +30,9 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     TopArtistasComponent,
     PainelDireitoComponent,
-    BuscasRecentesComponent
+    BuscasRecentesComponent,
+    TopArtistaComponent,
+    ArtistasItemImagemComponent
     ]
 })
 export class PlayerModule { }

@@ -21,4 +21,9 @@ export class BuscasRecentesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+
+  definirPesquisa(pesquisa: string) {
+    this.campoPesquisa =pesquisa
+  }
 }
