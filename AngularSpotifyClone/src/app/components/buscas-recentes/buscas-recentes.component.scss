@@ -1,0 +1,26 @@
+@import 'variaveis.scss';
+
+:host {
+  input{
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 35px;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 500;
+
+    &::placeholder {
+      font-size: .85rem;
+    }
+
+    &:focus &:active {
+      border-width: 2px;
+    }
+  }
+
+
+  .sugestoes {
+    flex-wrap: wrap;
+  }
+
+}

@@ -17,12 +17,23 @@
     </thead>
 
     <tbody>
-      <tr *ngFor="let music of musicas" (click)="executarMusica(music)">
-        <td>
+      <tr
+        *ngFor="let music of musicas"
+        (click)="executarMusica(music)"
+        [class.executando]="music.id == musicaAtual.id"
+      >
+        <td *ngIf="music.id != musicaAtual.id">
           <fa-icon [icon]="playIcon" class="play"></fa-icon>
         </td>
-        <td>{{ music.title }}</td>
-        <td>{{ obterArtistas(music) }}</td>
+        <td *ngIf="music.id == musicaAtual.id">
+          <fa-icon [icon]="playingIcon" [pulse]="true" class="play"></fa-icon>
+        </td>
+        <td>
+          {{ music.title }}
+        </td>
+        <td>
+          {{ obterArtistas(music) }}
+        </td>
         <td class="direita">{{ music.time }}</td>
         <td>{{ music.album.name }}</td>
       </tr>

@@ -1,3 +1,4 @@
+import { BuscasRecentesComponent } from './../../components/buscas-recentes/buscas-recentes.component';
 import { PainelDireitoComponent } from './../../components/painel-direito/painel-direito.component';
 import { TopArtistasComponent } from './../../components/top-artistas/top-artistas.component';
 import { HomeComponent } from './../home/home.component';
@@ -10,12 +11,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PlayerComponent } from './player.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(PlayerRotas),
-     FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   declarations: [
     PlayerComponent,
@@ -24,7 +27,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FooterUserComponent,
     HomeComponent,
     TopArtistasComponent,
-    PainelDireitoComponent
+    PainelDireitoComponent,
+    BuscasRecentesComponent
     ]
 })
 export class PlayerModule { }

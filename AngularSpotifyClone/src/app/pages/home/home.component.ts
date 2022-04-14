@@ -2,7 +2,7 @@ import { PlayerService } from './../../services/player.service';
 import { SpotifyService } from 'src/app/services/spotify.service';
 import { IMusica } from '../../interfaces/IMusica';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faCompactDisc, faHeartMusicCameraBolt, faPlay, faWaveSquare } from '@fortawesome/free-solid-svg-icons';
 import { newMusica } from 'src/app/Common/factories';
 import { Subscription } from 'rxjs';
 
@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   // icone play
   playIcon = faPlay
+  playingIcon = faCompactDisc
   constructor(private spotifyService: SpotifyService, private playerService: PlayerService) { }
 
 
@@ -55,6 +56,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 
   async executarMusica(musica: IMusica) {
-    await this.spotifyService.executarMusica(musica.id)
+    await this.spotifyService.executarMusica(musica.id);
+    this.playerService.definirMusicaAtual(musica)
   }
 }
