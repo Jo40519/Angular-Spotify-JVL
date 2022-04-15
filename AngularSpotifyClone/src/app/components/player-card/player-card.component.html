@@ -1,1 +1,20 @@
-<p>player-card works!</p>
+<div class="container card p-10">
+  <div
+    class="image"
+    [style.background-image]="'url(' + musica.album.imageUrl + ')'"
+  ></div>
+  <div class="controles">
+    <span>{{ musica.title }}</span>
+    <div class="botoes">
+      <fa-icon [icon]="anteriorIcon" (click)="voltarMusica()"></fa-icon>
+
+      <!-- <fa-icon
+        [icon]="pauseIcon"
+        *ngIf="musica.id"
+        (click)="pausarMusica()"
+      ></fa-icon> -->
+      <fa-icon [icon]="playIcon" (click)="pausarMusica()"></fa-icon>
+      <fa-icon [icon]="proximoIcon" (click)="proximaMusica()"></fa-icon>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,4 @@
+import { PlayerCardComponent } from './../../components/player-card/player-card.component';
 import { ArtistasItemImagemComponent } from './../../components/artistas-item-imagem/artistas-item-imagem.component';
 import { TopArtistaComponent } from './../../components/top-artista/top-artista.component';
 import { BuscasRecentesComponent } from './../../components/buscas-recentes/buscas-recentes.component';
@@ -32,7 +33,8 @@ import { FormsModule } from '@angular/forms';
     PainelDireitoComponent,
     BuscasRecentesComponent,
     TopArtistaComponent,
-    ArtistasItemImagemComponent
+    ArtistasItemImagemComponent,
+    PlayerCardComponent
     ]
 })
 export class PlayerModule { }

@@ -13,7 +13,6 @@ export class BuscasRecentesComponent implements OnInit {
     'Top Brasil',
     'Top Global',
     'Death Metal',
-    'Progressive Metal',
     'Opeth'
   ]
   constructor() { }
