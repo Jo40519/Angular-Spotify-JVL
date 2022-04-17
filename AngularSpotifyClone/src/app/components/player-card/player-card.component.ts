@@ -1,8 +1,8 @@
+import { IMusica } from './../../interfaces/IMusica';
 import { PlayerService } from './../../services/player.service';
 import { newMusica } from 'src/app/Common/factories';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SpotifyService } from 'src/app/services/spotify.service';
-import { IMusica } from 'src/app/interfaces/IMusica';
 import { Subscription } from 'rxjs';
 import { faStepBackward, faStepForward, faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 
@@ -22,7 +22,7 @@ export class PlayerCardComponent implements OnInit, OnDestroy {
   musica: IMusica = newMusica();
   musicaAtual: IMusica = newMusica();
   subs: Array<Subscription> = [];
-
+  musicaP: boolean
 
   constructor(private spotifyService: SpotifyService,
     private playerService: PlayerService) {
@@ -32,7 +32,10 @@ export class PlayerCardComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.obterMusicaTocando();
+    this.obterMusicaPausada();
   }
+
+
 
 
   ngOnDestroy(): void {
@@ -67,4 +70,13 @@ export class PlayerCardComponent implements OnInit, OnDestroy {
 
     this.subs.push(sub)
   }
+
+  obterMusicaPausada() {
+    const sub = this.playerService.musicaPausada.subscribe((musicaP: IMusica) => {
+      this.musicaAtual = musicaP
+    })
+    this.subs.push(sub)
+  }
+
+
 }

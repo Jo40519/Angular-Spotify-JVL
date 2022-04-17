@@ -7,13 +7,11 @@
     <span>{{ musica.title }}</span>
     <div class="botoes">
       <fa-icon [icon]="anteriorIcon" (click)="voltarMusica()"></fa-icon>
-
-      <!-- <fa-icon
+      <fa-icon
         [icon]="pauseIcon"
-        *ngIf="musica.id"
         (click)="pausarMusica()"
-      ></fa-icon> -->
-      <fa-icon [icon]="playIcon" (click)="pausarMusica()"></fa-icon>
+        (click)="tocarMusica()"
+      ></fa-icon>
       <fa-icon [icon]="proximoIcon" (click)="proximaMusica()"></fa-icon>
     </div>
   </div>

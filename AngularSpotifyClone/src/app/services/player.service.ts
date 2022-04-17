@@ -11,6 +11,7 @@ export class PlayerService {
 
 
   musicaAtual = new BehaviorSubject<IMusica>(newMusica())
+  musicaPausada = new BehaviorSubject<IMusica>(newMusica())
 
   timerId: any = null;
   constructor(private spotifyService: SpotifyService) {
@@ -43,12 +44,12 @@ export class PlayerService {
   }
 
 
-  async pausarMusica() {
+  async pausarMusica(a?:string) {
     this.spotifyService.pausarMusica();
   }
 
 
-  async tocarMusica() {
+  async tocarMusica(a?:string) {
     await this.spotifyService.tocarMusica()
   }
 }

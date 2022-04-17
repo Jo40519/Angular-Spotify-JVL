@@ -15,10 +15,10 @@ export const appRotas: Routes = [
 
   },
 
-   {
+  {
     path: 'player',
-     loadChildren: () => import('./pages/player/player.module').then(player => player.PlayerModule),
-     canLoad: [AutenticadoGuard]
+    loadChildren: () => import('./pages/player/player.module').then(player => player.PlayerModule),
+    canLoad: [AutenticadoGuard]
   },
 
 ]
