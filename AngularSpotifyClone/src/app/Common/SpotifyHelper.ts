@@ -23,6 +23,12 @@ export function SpotifyPlaylistParaPlaylist(playlist: SpotifyApi.PlaylistObjectS
   };
 }
 
+export function SpotifySinglePlyalistParaPlaylist(playlist: SpotifyApi.SinglePlaylistResponse): IPlaylist {
+  return {
+
+  }
+}
+
 
 export function SpotifyArtistaParaArtista(spotifyArtista: SpotifyApi.ArtistObjectFull):IArtistas {
   return {

@@ -80,6 +80,14 @@ export class SpotifyService {
     return playlists.items.map(SpotifyPlaylistParaPlaylist);
   }
 
+  async buscarMuiscasPlaylist(playlistId: string, offset = 0, limit = 50) {
+    const plyalistSpotify = await this.spotifyApi.getPlaylist(playlistId)
+
+    if (!playlistId) {
+
+    }
+  }
+
     async obterTopArtistas(limit = 10): Promise<IArtistas[]> {
       const artistas = await this.spotifyApi.getMyTopArtists({ limit });
       return artistas.items.map(SpotifyArtistaParaArtista)
@@ -118,6 +126,8 @@ export class SpotifyService {
   async tocarMusica() {
     await this.spotifyApi.play()
   }
+
+
 
 
   logOut() {

@@ -1,3 +1,4 @@
+import { SpotifyService } from 'src/app/services/spotify.service';
 import { PlayerService } from './../../services/player.service';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { newMusica } from 'src/app/Common/factories';
@@ -26,7 +27,7 @@ export class ListaMusicasComponent implements OnInit, OnDestroy {
   playIcon = faPlay
 
 
-  constructor(private playerService: PlayerService, private activedRoute: ActivatedRoute) { }
+  constructor(private playerService: PlayerService, private activedRoute: ActivatedRoute, private spotifyService: SpotifyService) { }
 
 
   ngOnInit(): void {
@@ -40,6 +41,7 @@ export class ListaMusicasComponent implements OnInit, OnDestroy {
       const sub =  this.activedRoute.paramMap.subscribe(async params => {
         const tipo = params.get('tipo')
         const id = params.get('id')
+        await this.obterDadosPagina(tipo, id)
       })
 
       this.subs.push(sub)
@@ -47,8 +49,21 @@ export class ListaMusicasComponent implements OnInit, OnDestroy {
 
 
   async obterDadosPagina(tipo:string, id: string) {
+    if (tipo == 'playlist') {
+      await this.obterDadosPlaylist(id)
+    } else {
+      await this.obterDadosArtistas(id)
+    }
+  }
+
+
+  async obterDadosPlaylist(plsylistId: string) {
 
   }
 
+
+  async obterDadosArtistas(artistaId: string) {
+
+  }
 
 }
