@@ -12,7 +12,7 @@ export const PlayerRotas : Routes = [
         component: HomeComponent
       },
       {
-        path: 'lista/:id',
+        path: 'lista/:tipo/:id',
         component: ListaMusicasComponent
       }
     ]
