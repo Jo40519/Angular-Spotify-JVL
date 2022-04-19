@@ -1,1 +1,49 @@
-<p>lista-musicas works!</p>
+<div class="minhas-musicas">
+  <div class="lista mt-4">
+    <app-banner
+      [imagem]="bannerImagemUrl"
+      [text]="bannerTexto"
+      class="d-block"
+    ></app-banner>
+
+    <div class="titulo-bg mt-7">
+      {{ title }}
+    </div>
+
+    <table class="table mt-3">
+      <thead>
+        <tr>
+          <th class="w-5">#</th>
+          <th class="w-35">Título</th>
+          <th class="w-30">Artista</th>
+          <th class="w-10 direita">Tempo</th>
+          <th class="w-20">Albúm</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr
+          *ngFor="let music of musica"
+          (click)="executarMusica(music)"
+          [class.executando]="music.id == musicaAtual.id"
+        >
+          <td *ngIf="music.id != musicaAtual.id">
+            <fa-icon [icon]="playIcon" class="play"></fa-icon>
+          </td>
+          <td *ngIf="music.id == musicaAtual.id">
+            <fa-icon [icon]="playingIcon" [pulse]="true" class="play"></fa-icon>
+          </td>
+          <td>
+            {{ music.title }}
+          </td>
+          <td>
+            {{ obterArtistas(music) }}
+          </td>
+          <td class="direita">{{ music.time }}</td>
+          <td>{{ music.album.name }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<app-painel-direito class="painel-direito"></app-painel-direito>

@@ -1,4 +1,4 @@
-import { newMusica } from 'src/app/Common/factories';
+import { newMusica, newPlaylist } from 'src/app/Common/factories';
 import { IMusica } from './../interfaces/IMusica';
 import { IArtistas } from './../interfaces/IArtistas';
 import { IPlaylist } from './../interfaces/IPlaylist';
@@ -24,8 +24,15 @@ export function SpotifyPlaylistParaPlaylist(playlist: SpotifyApi.PlaylistObjectS
 }
 
 export function SpotifySinglePlyalistParaPlaylist(playlist: SpotifyApi.SinglePlaylistResponse): IPlaylist {
-  return {
+  if (!playlist) {
+    return newPlaylist();
+  }
 
+  return {
+    id: playlist.id,
+    name: playlist.name,
+    imagemUrl: playlist.images.shift().url,
+    music: []
   }
 }
 

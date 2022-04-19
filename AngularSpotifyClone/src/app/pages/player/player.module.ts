@@ -1,3 +1,4 @@
+import { BannerComponent } from './../../components/banner/banner.component';
 import { ListaMusicasComponent } from './../lista-musicas/lista-musicas.component';
 import { PlayerCardComponent } from './../../components/player-card/player-card.component';
 import { ArtistasItemImagemComponent } from './../../components/artistas-item-imagem/artistas-item-imagem.component';
@@ -36,7 +37,8 @@ import { FormsModule } from '@angular/forms';
     TopArtistaComponent,
     ArtistasItemImagemComponent,
     PlayerCardComponent,
-    ListaMusicasComponent
+    ListaMusicasComponent,
+    BannerComponent
     ]
 })
 export class PlayerModule { }

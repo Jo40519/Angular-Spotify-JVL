@@ -6,7 +6,7 @@ import { IUsuario } from './../interfaces/IUsuario';
 import { Injectable } from '@angular/core';
 import { SpotifyConfiguration } from 'src/environments/environment';
 import Spotify from 'spotify-web-api-js';
-import { SpotifyArtistaParaArtista, SpotifyPlaylistParaPlaylist, SpotifyTrackParaMusica, SpotifyUserParaUsuario } from '../Common/SpotifyHelper';
+import { SpotifyArtistaParaArtista, SpotifyPlaylistParaPlaylist, SpotifySinglePlyalistParaPlaylist, SpotifyTrackParaMusica, SpotifyUserParaUsuario } from '../Common/SpotifyHelper';
 import { IPlaylist } from '../interfaces/IPlaylist';
 
 @Injectable({
@@ -84,8 +84,15 @@ export class SpotifyService {
     const plyalistSpotify = await this.spotifyApi.getPlaylist(playlistId)
 
     if (!playlistId) {
-
+      return null
     }
+
+    const palylist = SpotifySinglePlyalistParaPlaylist(plyalistSpotify)
+
+    const musicas = await this.spotifyApi.getPlaylistTracks(playlistId, { offset, limit })
+    palylist.music = musicas.items.map(musica => SpotifyTrackParaMusica(musica.track as SpotifyApi.TrackObjectFull))
+
+    return palylist
   }
 
     async obterTopArtistas(limit = 10): Promise<IArtistas[]> {

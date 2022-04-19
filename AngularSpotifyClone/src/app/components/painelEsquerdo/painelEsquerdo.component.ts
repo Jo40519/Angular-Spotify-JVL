@@ -41,4 +41,9 @@ export class PainelEsquerdoComponent implements OnInit {
     this.arrayPlaylist = await this.spotifyService.buscarPlaylistsUsuario();
   }
 
+
+  irParaPlaylist(playlistId: string) {
+    this.menuSelecionado = playlistId;
+    this.router.navigateByUrl(`player/lista/playlist/${playlistId}`)
+  }
 }

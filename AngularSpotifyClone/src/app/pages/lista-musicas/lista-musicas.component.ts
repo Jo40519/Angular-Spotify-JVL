@@ -1,6 +1,6 @@
 import { SpotifyService } from 'src/app/services/spotify.service';
 import { PlayerService } from './../../services/player.service';
-import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faCompactDisc } from '@fortawesome/free-solid-svg-icons';
 import { newMusica } from 'src/app/Common/factories';
 import { IMusica } from './../../interfaces/IMusica';
 import { Component, OnInit, OnDestroy } from '@angular/core';
@@ -25,16 +25,32 @@ export class ListaMusicasComponent implements OnInit, OnDestroy {
   musica: Array<IMusica> = []
   musicaAtual: IMusica = newMusica();
   playIcon = faPlay
+  playingIcon = faCompactDisc
 
+
+  title =''
 
   constructor(private playerService: PlayerService, private activedRoute: ActivatedRoute, private spotifyService: SpotifyService) { }
 
 
   ngOnInit(): void {
+    this.obterMusicas();
+    this.obterMusicaAtual()
   }
 
    ngOnDestroy(): void {
     this.subs.forEach(sub => sub.unsubscribe())
+  }
+
+
+
+
+  obterMusicaAtual() {
+    const sub = this.playerService.musicaAtual.subscribe(musica => {
+      this.musicaAtual = musica
+    })
+
+    this.subs.push(sub)
   }
 
     obterMusicas() {
@@ -57,8 +73,10 @@ export class ListaMusicasComponent implements OnInit, OnDestroy {
   }
 
 
-  async obterDadosPlaylist(plsylistId: string) {
-
+  async obterDadosPlaylist(playlistId: string) {
+    const playlistMusicas = await this.spotifyService.buscarMuiscasPlaylist(playlistId);
+    this.definirDadosPagina(playlistMusicas.name, playlistMusicas.imagemUrl, playlistMusicas.music);
+    this.title = `Múscias Playlist: ${playlistMusicas.name}`
   }
 
 
@@ -66,4 +84,20 @@ export class ListaMusicasComponent implements OnInit, OnDestroy {
 
   }
 
+
+  definirDadosPagina(bannerTexto: string, bannerImage: string, musicas: IMusica[]) {
+    this.bannerImagemUrl = bannerImage;
+    this.bannerTexto = bannerTexto;
+    this.musica = musicas
+  }
+
+
+   async executarMusica(musica: IMusica) {
+    await this.spotifyService.executarMusica(musica.id);
+    this.playerService.definirMusicaAtual(musica)
+  }
+
+   obterArtistas(musica: IMusica) {
+    return musica.artists.map(artistas => artistas.name).join(', ')
+  }
 }
