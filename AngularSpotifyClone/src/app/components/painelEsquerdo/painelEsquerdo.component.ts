@@ -37,6 +37,8 @@ export class PainelEsquerdoComponent implements OnInit {
     // this.router.navigate(['/player/home'])
   }
 
+
+
   async buscarPlaylist() {
     this.arrayPlaylist = await this.spotifyService.buscarPlaylistsUsuario();
   }

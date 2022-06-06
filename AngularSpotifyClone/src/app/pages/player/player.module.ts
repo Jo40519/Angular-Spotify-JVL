@@ -17,6 +17,7 @@ import { CommonModule } from '@angular/common';
 import { PlayerComponent } from './player.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
+import { SearchComponent } from '../search/search.component';
 
 @NgModule({
   imports: [
@@ -38,7 +39,8 @@ import { FormsModule } from '@angular/forms';
     ArtistasItemImagemComponent,
     PlayerCardComponent,
     ListaMusicasComponent,
-    BannerComponent
+    BannerComponent,
+    SearchComponent
     ]
 })
 export class PlayerModule { }

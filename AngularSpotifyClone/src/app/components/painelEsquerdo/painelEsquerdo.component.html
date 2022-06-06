@@ -14,9 +14,10 @@
     </app-botaoMenu>
 
     <app-botaoMenu
-      [descricao]="'Buscar'"
-      [selecionado]="menuSelecionado === 'Buscar'"
-      (click)="botaoClick('Buscar')"
+      [descricao]="'Search'"
+      [selecionado]="menuSelecionado === 'Search'"
+      (click)="botaoClick('Search')"
+      routerLink="/player/search"
     >
       <fa-icon [icon]="searchIcon" size="lg"></fa-icon>
     </app-botaoMenu>
