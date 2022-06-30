@@ -17,7 +17,6 @@ import { CommonModule } from '@angular/common';
 import { PlayerComponent } from './player.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
-import { SearchComponent } from '../search/search.component';
 
 @NgModule({
   imports: [
@@ -40,7 +39,6 @@ import { SearchComponent } from '../search/search.component';
     PlayerCardComponent,
     ListaMusicasComponent,
     BannerComponent,
-    SearchComponent
     ]
 })
 export class PlayerModule { }
