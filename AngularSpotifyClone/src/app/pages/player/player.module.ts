@@ -38,7 +38,7 @@ import { FormsModule } from '@angular/forms';
     ArtistasItemImagemComponent,
     PlayerCardComponent,
     ListaMusicasComponent,
-    BannerComponent
+    BannerComponent,
     ]
 })
 export class PlayerModule { }
