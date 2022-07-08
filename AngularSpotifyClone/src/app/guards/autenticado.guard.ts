@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanLoad, Route, Router, UrlSegment, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import { SpotifyService } from '../services/spotify.service';
+import { SpotifyService } from '../core/services/spotify.service';
 
 @Injectable({
   providedIn: 'root'

@@ -1,5 +1,5 @@
-import { PlayerService } from './../../services/player.service';
-import { SpotifyService } from 'src/app/services/spotify.service';
+import { PlayerService } from '../../core/services/player.service';
+import { SpotifyService } from 'src/app/core/services/spotify.service';
 import { IMusica } from '../../interfaces/IMusica';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { faCompactDisc, faHeartMusicCameraBolt, faPlay, faWaveSquare } from '@fortawesome/free-solid-svg-icons';

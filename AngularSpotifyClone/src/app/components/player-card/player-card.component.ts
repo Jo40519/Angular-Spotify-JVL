@@ -1,8 +1,8 @@
 import { IMusica } from './../../interfaces/IMusica';
-import { PlayerService } from './../../services/player.service';
+import { PlayerService } from '../../core/services/player.service';
 import { newMusica } from 'src/app/Common/factories';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { SpotifyService } from 'src/app/services/spotify.service';
+import { SpotifyService } from 'src/app/core/services/spotify.service';
 import { Subscription } from 'rxjs';
 import { faStepBackward, faStepForward, faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 

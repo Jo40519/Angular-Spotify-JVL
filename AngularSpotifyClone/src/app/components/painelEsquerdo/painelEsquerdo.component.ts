@@ -4,7 +4,7 @@ import { faGuitar,  faMusic, faSearch, faHome } from '@fortawesome/free-solid-sv
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { IPlaylist } from 'src/app/interfaces/IPlaylist';
-import { SpotifyService } from 'src/app/services/spotify.service';
+import { SpotifyService } from 'src/app/core/services/spotify.service';
 @Component({
   selector: 'app-painelEsquerdo',
   templateUrl: './painelEsquerdo.component.html',

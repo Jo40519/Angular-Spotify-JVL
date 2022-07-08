@@ -1,4 +1,4 @@
-import { SpotifyService } from './../../services/spotify.service';
+import { SpotifyService } from '../../core/services/spotify.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({

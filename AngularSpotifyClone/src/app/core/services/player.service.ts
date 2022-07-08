@@ -1,7 +1,7 @@
-import { SpotifyService } from 'src/app/services/spotify.service';
-import { IMusica } from './../interfaces/IMusica';
+import { SpotifyService } from 'src/app/core/services/spotify.service';
+import { IMusica } from '../../interfaces/IMusica';
 import { Injectable } from '@angular/core';
-import { newMusica } from '../Common/factories';
+import { newMusica } from '../../Common/factories';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({

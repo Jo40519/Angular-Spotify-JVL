@@ -1,13 +1,13 @@
-import { IMusica } from '../interfaces/IMusica';
-import { IArtistas } from './../interfaces/IArtistas';
+import { IMusica } from '../../interfaces/IMusica';
+import { IArtistas } from '../../interfaces/IArtistas';
 import { Router } from '@angular/router';
 import { async } from '@angular/core/testing';
-import { IUsuario } from './../interfaces/IUsuario';
+import { IUsuario } from '../../interfaces/IUsuario';
 import { Injectable } from '@angular/core';
 import { SpotifyConfiguration } from 'src/environments/environment';
 import Spotify from 'spotify-web-api-js';
-import { SpotifyArtistaParaArtista, SpotifyPlaylistParaPlaylist, SpotifySinglePlyalistParaPlaylist, SpotifyTrackParaMusica, SpotifyUserParaUsuario } from '../Common/SpotifyHelper';
-import { IPlaylist } from '../interfaces/IPlaylist';
+import { SpotifyArtistaParaArtista, SpotifyPlaylistParaPlaylist, SpotifySinglePlyalistParaPlaylist, SpotifyTrackParaMusica, SpotifyUserParaUsuario } from '../../Common/SpotifyHelper';
+import { IPlaylist } from '../../interfaces/IPlaylist';
 
 @Injectable({
   providedIn: 'root'

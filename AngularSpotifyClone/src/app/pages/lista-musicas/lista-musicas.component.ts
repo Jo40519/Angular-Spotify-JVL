@@ -1,5 +1,5 @@
-import { SpotifyService } from 'src/app/services/spotify.service';
-import { PlayerService } from './../../services/player.service';
+import { SpotifyService } from 'src/app/core/services/spotify.service';
+import { PlayerService } from '../../core/services/player.service';
 import { faPlay, faCompactDisc } from '@fortawesome/free-solid-svg-icons';
 import { newMusica } from 'src/app/Common/factories';
 import { IMusica } from './../../interfaces/IMusica';
