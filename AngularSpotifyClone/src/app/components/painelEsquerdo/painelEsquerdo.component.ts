@@ -29,6 +29,7 @@ export class PainelEsquerdoComponent implements OnInit {
 
   ngOnInit() {
     this.buscarPlaylist();
+    this.botaoClick(this.menuSelecionado = 'Início');
   }
 
 

@@ -34,6 +34,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subs.forEach(sub => sub.unsubscribe())
+    console.log('destroy:', this.subs)
   }
 
 

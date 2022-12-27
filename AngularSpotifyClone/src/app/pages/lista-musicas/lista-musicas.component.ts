@@ -51,6 +51,7 @@ export class ListaMusicasComponent implements OnInit, OnDestroy {
     })
 
     this.subs.push(sub)
+    console.log('subs aqui:', this.subs)
   }
 
     obterMusicas() {
@@ -61,6 +62,7 @@ export class ListaMusicasComponent implements OnInit, OnDestroy {
       })
 
       this.subs.push(sub)
+
     }
 
 
